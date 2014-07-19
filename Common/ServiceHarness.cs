@@ -1,6 +1,6 @@
 ﻿using System.ServiceProcess;
 
-namespace TxServer
+namespace Common
 {
     public partial class ServiceHarness : ServiceBase
     {

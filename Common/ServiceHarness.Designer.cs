@@ -1,4 +1,4 @@
-﻿namespace TxServer
+﻿namespace Common
 {
     partial class ServiceHarness
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TxServer
+namespace Common
 {
     public interface IWindowsService : IDisposable
     {

@@ -16,7 +16,7 @@ namespace Common
             _monitoredQueue = new MessageQueue(queueAddress);
         }
 
-        public abstract string ServiceName { get; }
+        public abstract string ServiceName { get; protected set; }
         protected abstract IMessageFormatter GetQueueMessageFormatter();
 
         public void OnStart(string[] args)

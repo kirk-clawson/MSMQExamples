@@ -1,6 +1,6 @@
 ﻿namespace Common
 {
-    partial class ServiceHarness
+    partial class SmcHarness
     {
         /// <summary> 
         /// Required designer variable.

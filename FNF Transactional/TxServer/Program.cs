@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ServiceProcess;
-using System.Windows.Forms;
+using Common;
+using Common.Extended;
 
 namespace TxServer
 {
@@ -9,19 +10,18 @@ namespace TxServer
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        [STAThread]
         static void Main()
         {
             var server = new TransactionalServer();
 
             if (Environment.UserInteractive)
             {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new WinFormHarness(server));
+                WpfHarnessApplication.Run(server);
             }
             else
             {
-                ServiceBase.Run(new ServiceHarness(server));
+                ServiceBase.Run(new SmcHarness(server));
             }
         }
     }

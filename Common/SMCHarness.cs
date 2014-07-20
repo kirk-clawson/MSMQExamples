@@ -2,16 +2,16 @@
 
 namespace Common
 {
-    public partial class ServiceHarness : ServiceBase
+    public partial class SmcHarness : ServiceBase
     {
         private readonly IWindowsService _serverImpl;
 
-        public ServiceHarness()
+        public SmcHarness()
         {
             InitializeComponent();
         }
 
-        public ServiceHarness(IWindowsService serverImpl) : this()
+        public SmcHarness(IWindowsService serverImpl) : this()
         {
             _serverImpl = serverImpl;
         }

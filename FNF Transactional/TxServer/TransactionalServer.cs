@@ -28,6 +28,7 @@ namespace TxServer
             _txQueue = new MessageQueue(QueueAddress, true);
             _txQueue.Formatter = new XmlMessageFormatter(new[] { typeof(BasicMessage) });
             _txQueue.PeekCompleted += TxQueueOnPeekCompleted;
+            Thread.Sleep(2000); // so I can see WPF bindings
             _txQueue.BeginPeek();
         }
 
@@ -39,6 +40,7 @@ namespace TxServer
                 Thread.Sleep(500);
             }
             _txQueue.PeekCompleted -= TxQueueOnPeekCompleted;
+            Thread.Sleep(2000); // so I can see WPF bindings
             _txQueue.Dispose();
             _txQueue = null;
         }
